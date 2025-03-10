@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Collage</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .collage-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .collage-item {
+            flex: 1 1 33%;
+            max-width: 33%;
+            height: 33vh;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="collage-container">
+        <img src="pic1.jpeg" alt="Image 1" class="collage-item">
+        <img src="pic2.jpeg" alt="Image 2" class="collage-item">
+        <img src="pic3.jpeg" alt="Image 3" class="collage-item">
+        <img src="pic4.jpeg" alt="Image 4" class="collage-item">
+        <img src="pic5.jpeg" alt="Image 5" class="collage-item">
+        <img src="pic6.jpeg" alt="Image 6" class="collage-item">
+        <!-- Add more images as needed -->
+    </div>
+</body>
+</html></div>

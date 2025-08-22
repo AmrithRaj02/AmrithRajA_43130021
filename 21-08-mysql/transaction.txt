@@ -1,0 +1,13 @@
+show databases;
+drop database lenova;
+create database lenova;
+use lenova;
+
+create table company(empid int,empname varchar(30),empsalary int,empage int);
+insert into company values(001,'Amrith',80000,20),(002,'Kamalesh',90000,19),(003,'Kamalini',70000,21),(004,'Tamil',82000,23),(005,'Sanjay',78000,18);
+select * from company; 
+start transaction;
+ savepoint aug;
+ delete from company where empid = 003;
+  rollback to aug;  
+  select * from company;

@@ -1,0 +1,37 @@
+drop database catadnpro;
+create database amazon;
+use amazon;
+create table category(
+catid int primary key,
+catname varchar(30) not null
+);
+drop table product;
+create table product(
+proid int primary key,
+proname varchar(30),
+catid int not null,
+foreign key(catid) references category (catid)
+);
+ select * from category;
+ select * from product;
+insert into category values
+(10101,'fashion'),
+(10102,'appliances'),
+(10103,'mobiles');
+insert into product values
+(123,'fridge',10102),
+(234,'airconditioner',10102),
+(345,'realme12',10103),
+(456,'redmi12',10103),
+(567,'shirt',10101),
+(678,'pant',10101);
+
+insert into product values(567,'tshirt',10101);
+insert into product values(456,'lapto',10103);
+
+delete from category where catid = 10103;
+delete from product where catid =  10102;
+
+update category set catid= 10102 where catid= 10105 ;
+update product set catid = 10102 where proid = 090;
+

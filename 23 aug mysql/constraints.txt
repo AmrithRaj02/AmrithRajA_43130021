@@ -1,0 +1,23 @@
+show databases;
+create database sathyabama;
+use sathyabama;
+create table thagavall(
+urname varchar(50) not null,
+urid int not null,
+urage int not null,
+urmob int not null,
+ursex varchar(10)
+);
+alter table thagavall add unique(urid);
+alter table thagavall modify ursex varchar(10) not null;
+alter table thagavall drop index urid;
+alter table thagavall modify urid int null;
+show index from thagavall;
+desc thagavall;
+insert into thagavall values
+('amrith',1,20,823,'male'),
+('ajay',2,18,344,'male'),
+('asha',3,22,12,'female');
+alter table thagavall add primary key(urid);
+select * from thagavall;
+alter table thagavall add check(urage>=18);

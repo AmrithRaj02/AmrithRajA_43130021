@@ -1,0 +1,167 @@
+POLYMORPHISM|
+
+package basic2;
+public class Polymorphism {
+    public static void main(String[] args) {
+        calculator c = new calculator();
+        c.add(10, 20.5);   
+        c.add(15.5, 10);   
+        c.add(5.5f, 2);    
+    }
+}
+class calculator {
+    void add(int a, double b) {
+        System.out.println("add(int, double) = " + (a + b));
+    }
+    void add(double a, int b) {
+        System.out.println("add(double, int) = " + (a + b));
+    }
+    void add(float a, int b) {
+        System.out.println("add(float, int) = " + (a + b));
+    }
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+OVERRIDDING AND OVERLOADING
+
+
+package basic2;
+public class OverridingOverloading {
+	public static void main(String[] args) {
+		son s = new son();
+		s.RE();
+	}
+}	
+	class grandfather {
+		void RE() {
+			System.out.println("Old model");
+		}
+	}
+	class father extends grandfather {
+		void RE() {
+			System.out.println("Model");
+		}
+	}
+	class son extends father {
+		void RE() {
+			System.out.println("New model");
+		}
+	}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+EXCEPTION AND ERROR
+
+
+package basic2;
+import java.util.Scanner;
+public class ExceptionAndError {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.print("Enter a number: ");
+            int x = sc.nextInt();
+            System.out.println("You entered: " + x);
+            
+            System.out.print("Enter number to divide 100: ");
+            int num = sc.nextInt();
+            int result = 100 / num;              
+            System.out.println("Result: " + result);
+        }
+        catch (ArithmeticException e) {
+        	System.out.println("Can't Divide by zero");
+        }
+        catch (Exception e) {
+            System.out.println("Invalid input!");
+        }
+        finally {
+        	System.out.println("Thank you For your answer !!! ");
+        }
+    }
+}
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+ENCAPSULATION
+
+
+package basic2;
+public class Encapsulation {
+	public static void main(String[] args) {
+		Phonepe p = new Phonepe();
+		p.checkBalance();
+		p.changeEmail();
+	}
+}
+class IOB {
+	private String name = "Amrith";
+	public String getMail_id() {
+		return mail_id;
+	}
+	public void setMail_id(String mail_id) {
+		this.mail_id = mail_id;
+	}
+	public long getAccount_Balance() {
+		return Account_Balance;
+	}
+	 public void setName(String name) {
+		this.name = name;
+	}
+	private long Account_Balance = 6969696;
+	private String mail_id = "amritharulraj@gmail.com"; 
+	
+}
+class Phonepe extends IOB {
+	void checkBalance() {
+		System.out.println(getAccount_Balance());
+	}
+	void changeEmail () {
+		System.out.println(getMail_id());
+		setMail_id("amrithraj@gmail.com");
+		System.out.println(getMail_id());
+	}	
+}
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+ABSTRACTION
+
+package basic2;
+public class Abstraction {
+	public static void main(String[] args) {
+		Game g2 = new FreeFire();
+		g2.pubg();
+		g2.ff();
+		g2.run();
+	}
+}
+abstract class Game {
+	abstract void pubg(); 
+	abstract void ff ();
+    void run() {
+        System.out.println("Player is running ... ");
+    }
+}
+class Pubg extends Game {
+    void pubg() {
+        System.out.println("Best RPG Game");
+    }
+		void ff() {
+	}
+}
+class FreeFire extends Pubg {
+	void ff() {
+		System.out.println("It is a child Game");
+	}
+	
+} 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
